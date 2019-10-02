@@ -21,7 +21,6 @@
                 <!-- <td>{{task.id}}</td> -->
                 <td>{{task.task}}</td>
                 <td>
-                    <!-- <input type="checkbox" (click)="staTus()" ng-model="checkboxModel" ng-true-value="'YES'" ng-false-value="'NO'"> -->
                     <input type="checkbox" (click)="staTus(i)" [checked]='check' (change)="check = !check" />
                 </td>
                 <td>
@@ -38,7 +37,7 @@
         </tbody>
     </table>
     <form action="" class="editForm" *ngIf="editForm">
-        <input type="text" [value]="taskEdite">
+        <input type="text" [(ngModel)]="taskEdite" name="taskEdite">
         <input type="button" class="addBtn" value="Save" (click)="save()">
     </form>
 </div>

@@ -57,15 +57,17 @@ export class MainComponent implements OnInit {
     
   }
   edit(i): void {
-    if (this.tasks[i].task != undefined) {
+    if (this.tasks[i].task != undefined && this.tasks[i].status != 'Done') {
       this.editForm = true;
       this.taskEdite = this.tasks[i].task;
+      this.index = i;
     }
-
+    
 
   }
   save(): void {
-    this.editForm = false;
+    this.tasks[this.index].task = this.taskEdite;
+    this.editForm = false;   
   }
 
 
