@@ -1,0 +1,82 @@
+.container{
+    padding: 20px 0;
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    /* padding-bottom: 20px; */
+
+}
+.addForm{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    /* background-color: red; */
+}
+.addBtn{
+    width: 150px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+}
+input[type=text]{
+    width: 83%;
+    margin-right: 10px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    padding-left: 15px;
+    background-color: white;
+}
+
+.container{
+    width: 100%;
+    /* margin: 40px auto; */
+    display: flex;
+    justify-content: space-between;
+}
+
+table{
+    width: 100%;
+}
+th{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    height: 40px;
+    font-size: 20px;
+    border-collapse: unset;
+}
+td{
+    /* border: 1px solid black; */
+    text-align: center;
+    height: 40px;
+    font-size: 20px;
+    border-bottom: 1px solid grey;
+    /* border-collapse: collapse; */
+}
+.button{
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin: 10px 0px;
+}
+.editeButton{
+    background-color: orange;
+    color: black;
+}
+.deleteButton{
+    background-color: red;
+    color: white;
+}
+.editeButton:hover{
+    background-color: darkorange;
+    cursor: pointer;
+}
+.deleteButton:hover{
+    background-color: darkred;
+    cursor: pointer;
+}
