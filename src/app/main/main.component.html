@@ -21,11 +21,12 @@
                 <!-- <td>{{task.id}}</td> -->
                 <td>{{task.task}}</td>
                 <td>
-                    <input type="checkbox" [(ngModel)]="checkStatus" (click)="status()" />
+                    <!-- <input type="checkbox" (click)="staTus()" ng-model="checkboxModel" ng-true-value="'YES'" ng-false-value="'NO'"> -->
+                    <input type="checkbox" (click)="staTus(i)" [checked]='check' (change)="check = !check" />
                 </td>
                 <td>
-                    <p *ngIf="checkStatus">Done</p>
-                    <p *ngIf="!checkStatus">in PROGRES</p>
+                    <p>{{task.status}}</p>
+                    <!-- <p *ngIf="!status">{{task.status}}</p> -->
                 </td>
                 <td>
                     <button (click)="edit(i)" class="button editeButton">edit</button>
@@ -36,4 +37,8 @@
             </tr>
         </tbody>
     </table>
+    <form action="" class="editForm" *ngIf="editForm">
+        <input type="text" [value]="taskEdite">
+        <input type="button" class="addBtn" value="Save" (click)="save()">
+    </form>
 </div>

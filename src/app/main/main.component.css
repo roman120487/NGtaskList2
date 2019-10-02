@@ -80,3 +80,6 @@ td{
     background-color: darkred;
     cursor: pointer;
 }
+.editForm{
+    margin-top: 25px;
+}
