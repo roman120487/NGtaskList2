@@ -1,20 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
+
+
+
 export class MainComponent implements OnInit {
   tasks: Array<any>;
   index: number;
   id: number;
   newTask: string;
-  check: boolean = false;
+  check: boolean;
   status: string = 'in Progres';
   taskEdite: string;
   deleteDeactivate: boolean;
   editForm: boolean;
+  counter: number;
   // checkboxModel: string = 'true';
 
   constructor() {
@@ -23,6 +28,8 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
   }
   addTask(): void {
     if (this.newTask != '') {
@@ -36,6 +43,8 @@ export class MainComponent implements OnInit {
       // }
       console.log(this.tasks);
       this.newTask = '';
+      this.counter = this.tasks.length;
+      console.log(this.counter);
     }
   }
   staTus(i: number) {

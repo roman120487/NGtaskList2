@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NGtaskList2';
+  public counter: number;
 }
