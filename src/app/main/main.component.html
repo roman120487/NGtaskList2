@@ -21,7 +21,7 @@
                 <!-- <td>{{task.id}}</td> -->
                 <td>{{task.task}}</td>
                 <td>
-                    <input type="checkbox" (click)="staTus(i)" [checked]='check' (change)="check = !check" />
+                    <input type="checkbox" (click)="staTus(i)" [checked]='check' />
                 </td>
                 <td>
                     <p>{{task.status}}</p>
@@ -31,7 +31,7 @@
                     <button (click)="edit(i)" class="button editeButton">edit</button>
                 </td>
                 <td>
-                    <button (click)="delete(i)" class="button deleteButton">delete</button>
+                    <button (click)="delete(i)" [disabled]='deleteDeactivate' class="button deleteButton">delete</button>
                 </td>
             </tr>
         </tbody>

@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
   check: boolean = false;
   status: string = 'in Progres';
   taskEdite: string;
-
+  deleteDeactivate: boolean;
   editForm: boolean;
   // checkboxModel: string = 'true';
 
@@ -25,23 +25,26 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
   addTask(): void {
-    const task: ITask = new Task(1, this.newTask, this.check, this.status);
-    if (this.tasks.length > 0) {
-      task.id = this.tasks.slice(-1)[0].id + 1;
+    if (this.newTask != '') {
+      const task: ITask = new Task(1, this.newTask, this.check, this.status);
+      if (this.tasks.length > 0) {
+        task.id = this.tasks.slice(-1)[0].id + 1;
+      }
+      this.tasks.push(task);
+      // if(this.check){
+      //   this.status = 'in Progres'
+      // }
+      console.log(this.tasks);
+      this.newTask = '';
     }
-    this.tasks.push(task)
-    // if(this.check){
-    //   this.status = 'in Progres'
-    // }
-    console.log(this.tasks);
-
   }
   staTus(i: number) {
     console.log(i);
     this.index = i;
+    this.tasks[i].check = true;
     // console.log(this.index);
     // console.log(this.tasks[i]);
-    console.log(this.tasks[i].status);
+    console.log(this.tasks[i].check);
 
     if (this.tasks[i].status == 'in Progres') {
       this.tasks[i].status = 'Done';
@@ -51,10 +54,10 @@ export class MainComponent implements OnInit {
     console.log(this.tasks[i].status);
   }
   delete(i: number) {
-    if( this.tasks[i].status == 'Done'){
+    if (this.tasks[i].status == 'Done') {
       this.tasks.splice(i, 1);
     }
-    
+
   }
   edit(i): void {
     if (this.tasks[i].task != undefined && this.tasks[i].status != 'Done') {
@@ -62,12 +65,12 @@ export class MainComponent implements OnInit {
       this.taskEdite = this.tasks[i].task;
       this.index = i;
     }
-    
+
 
   }
   save(): void {
     this.tasks[this.index].task = this.taskEdite;
-    this.editForm = false;   
+    this.editForm = false;
   }
 
 
